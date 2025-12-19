@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: AMI CMS Data Driven Components API
-  description: 'BFF layer-facing API for CMS enhanced offers, incentives, trackers, and retail performance metrics components.
+  description: 'BFF layer-facing API for fetching data for the enhanced offers, incentives, trackers, and retail performance metrics components.
 
 
     **Authentication**
