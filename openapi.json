@@ -30,32 +30,32 @@
     }
   ],
   "paths": {
-    "/v1/current-offers": {
-      "$ref": "./paths/_v1_current-offers.json"
+    "/current-offers": {
+      "$ref": "./paths/current-offers.json"
     },
-    "/v1/tire-finder-promo-modal": {
-      "$ref": "./paths/_v1_tire-finder-promo-modal.json"
+    "/tire-finder-promo-modal": {
+      "$ref": "./paths/tire-finder-promo-modal.json"
     },
-    "/v1/incentive-tracker": {
-      "$ref": "./paths/_v1_incentive-tracker.json"
+    "/incentive-tracker": {
+      "$ref": "./paths/incentive-tracker.json"
     },
-    "/v1/program-benefits-tracker": {
-      "$ref": "./paths/_v1_program-benefits-tracker.json"
+    "/program-benefits-tracker": {
+      "$ref": "./paths/program-benefits-tracker.json"
     },
-    "/v1/retail-tire-sales-incentive": {
-      "$ref": "./paths/_v1_retail-tire-sales-incentive.json"
+    "/retail-tire-sales-incentive": {
+      "$ref": "./paths/retail-tire-sales-incentive.json"
     },
-    "/v1/snapshot-table": {
-      "$ref": "./paths/_v1_snapshot-table.json"
+    "/snapshot-table": {
+      "$ref": "./paths/snapshot-table.json"
     },
-    "/v1/retail-ro-metrics": {
-      "$ref": "./paths/_v1_retail-ro-metrics.json"
+    "/retail-ro-metrics": {
+      "$ref": "./paths/retail-ro-metrics.json"
     },
-    "/v1/order-claims-tracker": {
-      "$ref": "./paths/_v1_order-claims-tracker.json"
+    "/order-claims-tracker": {
+      "$ref": "./paths/order-claims-tracker.json"
     },
-    "/v1/volume-discount-tracker": {
-      "$ref": "./paths/_v1_volume-discount-tracker.json"
+    "/volume-discount-tracker": {
+      "$ref": "./paths/volume-discount-tracker.json"
     }
   },
   "components": {
