@@ -1,8 +1,0 @@
-name: startDate
-in: query
-required: false
-schema:
-  type: string
-  format: date
-  example: '2025-12-01'
-description: Inclusive start date for range queries.

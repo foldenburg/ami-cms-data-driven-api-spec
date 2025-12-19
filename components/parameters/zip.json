@@ -1,0 +1,10 @@
+{
+  "name": "zip",
+  "in": "query",
+  "required": false,
+  "schema": {
+    "type": "string",
+    "example": "28202"
+  },
+  "description": "Postal/ZIP code for regional eligibility."
+}

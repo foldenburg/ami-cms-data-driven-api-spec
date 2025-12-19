@@ -1,0 +1,11 @@
+{
+  "name": "quarter",
+  "in": "query",
+  "required": false,
+  "schema": {
+    "type": "string",
+    "pattern": "^\\d{4}Q[1-4]$",
+    "example": "2025Q4"
+  },
+  "description": "Quarter identifier."
+}

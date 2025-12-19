@@ -1,7 +1,0 @@
-name: placement
-in: query
-required: false
-schema:
-  type: string
-  example: tire-finder-results
-description: UI placement key used to select modal content/rules.

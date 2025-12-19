@@ -1,0 +1,10 @@
+{
+  "name": "brand",
+  "in": "query",
+  "required": false,
+  "schema": {
+    "type": "string",
+    "example": "ACME_TIRE"
+  },
+  "description": "Tire brand filter."
+}

@@ -33,7 +33,7 @@ jobs:
       # Build a single standalone HTML file from your OpenAPI
       - name: Build Redoc HTML
         run: |
-          npx -y @redocly/cli@latest build-docs ./openapi.yaml -o ./docs/index.html
+          npx -y @redocly/cli@latest build-docs ./openapi.json -o ./docs/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

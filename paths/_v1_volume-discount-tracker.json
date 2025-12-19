@@ -1,0 +1,72 @@
+{
+  "get": {
+    "tags": [
+      "Incentives"
+    ],
+    "summary": "Get volume discount progress",
+    "operationId": "getVolumeDiscountTracker",
+    "parameters": [
+      {
+        "$ref": "#/components/parameters/DealerId"
+      },
+      {
+        "$ref": "#/components/parameters/Quarter"
+      },
+      {
+        "$ref": "#/components/parameters/Brand"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Volume discount progress and tiers",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/VolumeDiscountResponse"
+            },
+            "examples": {
+              "example": {
+                "value": {
+                  "dealerId": "DLR-004219",
+                  "quarter": "2025Q4",
+                  "brand": "ACME_TIRE",
+                  "tiers": [
+                    {
+                      "units": 250,
+                      "discountPercent": 1.0
+                    },
+                    {
+                      "units": 500,
+                      "discountPercent": 2.0
+                    },
+                    {
+                      "units": 750,
+                      "discountPercent": 3.0
+                    }
+                  ],
+                  "progress": {
+                    "unitsPurchased": 412,
+                    "currentDiscountPercent": 1.0,
+                    "nextTierUnits": 500
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "$ref": "#/components/responses/BadRequest"
+      },
+      "401": {
+        "$ref": "#/components/responses/Unauthorized"
+      },
+      "403": {
+        "$ref": "#/components/responses/Forbidden"
+      },
+      "500": {
+        "$ref": "#/components/responses/InternalError"
+      }
+    }
+  }
+}

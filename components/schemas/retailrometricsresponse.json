@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "required": [
+    "dealerId",
+    "period",
+    "metrics"
+  ],
+  "properties": {
+    "dealerId": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "startDate",
+        "endDate"
+      ],
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "roCount",
+        "avgTicket",
+        "tireAttachRate",
+        "alignmentAttachRate"
+      ],
+      "properties": {
+        "roCount": {
+          "type": "integer"
+        },
+        "avgTicket": {
+          "$ref": "#/components/schemas/Money"
+        },
+        "tireAttachRate": {
+          "type": "number",
+          "format": "float",
+          "example": 0.34
+        },
+        "alignmentAttachRate": {
+          "type": "number",
+          "format": "float",
+          "example": 0.18
+        }
+      }
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "readOnly": true
+}

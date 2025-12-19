@@ -1,0 +1,70 @@
+{
+  "get": {
+    "tags": [
+      "Offers"
+    ],
+    "summary": "Get promo modal content for Tire Finder",
+    "operationId": "getTireFinderPromoModal",
+    "parameters": [
+      {
+        "$ref": "#/components/parameters/DealerId"
+      },
+      {
+        "$ref": "#/components/parameters/Market"
+      },
+      {
+        "$ref": "#/components/parameters/Locale"
+      },
+      {
+        "$ref": "#/components/parameters/Zip"
+      },
+      {
+        "$ref": "#/components/parameters/Placement"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Promo modal content and display rules",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PromoModalResponse"
+            },
+            "examples": {
+              "example": {
+                "summary": "Promo modal content",
+                "value": {
+                  "modalId": "MODAL-TF-001",
+                  "title": "Limited Time Offer",
+                  "bodyMarkdown": "**Save $80** when you buy 4 eligible tires.\nOffer ends **12/31/2025**.\n",
+                  "cta": {
+                    "label": "View Offers",
+                    "href": "/offers"
+                  },
+                  "displayRules": {
+                    "maxViewsPerUser": 3,
+                    "cooldownHours": 24,
+                    "startDate": "2025-10-01",
+                    "endDate": "2025-12-31"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "$ref": "#/components/responses/BadRequest"
+      },
+      "401": {
+        "$ref": "#/components/responses/Unauthorized"
+      },
+      "403": {
+        "$ref": "#/components/responses/Forbidden"
+      },
+      "500": {
+        "$ref": "#/components/responses/InternalError"
+      }
+    }
+  }
+}

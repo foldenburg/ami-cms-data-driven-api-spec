@@ -1,0 +1,179 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Incentives & Analytics API",
+    "description": "Client-facing API for offers, incentives, trackers, and retail performance metrics.\n\n**Authentication**\n- All endpoints require a Bearer token.\n",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Offers"
+    },
+    {
+      "name": "Incentives"
+    },
+    {
+      "name": "Retail Metrics"
+    },
+    {
+      "name": "Tracking"
+    }
+  ],
+  "paths": {
+    "/v1/current-offers": {
+      "$ref": "./paths/_v1_current-offers.json"
+    },
+    "/v1/tire-finder-promo-modal": {
+      "$ref": "./paths/_v1_tire-finder-promo-modal.json"
+    },
+    "/v1/incentive-tracker": {
+      "$ref": "./paths/_v1_incentive-tracker.json"
+    },
+    "/v1/program-benefits-tracker": {
+      "$ref": "./paths/_v1_program-benefits-tracker.json"
+    },
+    "/v1/retail-tire-sales-incentive": {
+      "$ref": "./paths/_v1_retail-tire-sales-incentive.json"
+    },
+    "/v1/snapshot-table": {
+      "$ref": "./paths/_v1_snapshot-table.json"
+    },
+    "/v1/retail-ro-metrics": {
+      "$ref": "./paths/_v1_retail-ro-metrics.json"
+    },
+    "/v1/order-claims-tracker": {
+      "$ref": "./paths/_v1_order-claims-tracker.json"
+    },
+    "/v1/volume-discount-tracker": {
+      "$ref": "./paths/_v1_volume-discount-tracker.json"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Use `Authorization: Bearer <token>`."
+      }
+    },
+    "parameters": {
+      "DealerId": {
+        "$ref": "./components/parameters/dealerid.json"
+      },
+      "Market": {
+        "$ref": "./components/parameters/market.json"
+      },
+      "Locale": {
+        "$ref": "./components/parameters/locale.json"
+      },
+      "Zip": {
+        "$ref": "./components/parameters/zip.json"
+      },
+      "EffectiveDate": {
+        "$ref": "./components/parameters/effectivedate.json"
+      },
+      "StartDate": {
+        "$ref": "./components/parameters/startdate.json"
+      },
+      "EndDate": {
+        "$ref": "./components/parameters/enddate.json"
+      },
+      "ProgramCode": {
+        "$ref": "./components/parameters/programcode.json"
+      },
+      "Brand": {
+        "$ref": "./components/parameters/brand.json"
+      },
+      "Quarter": {
+        "$ref": "./components/parameters/quarter.json"
+      },
+      "Placement": {
+        "$ref": "./components/parameters/placement.json"
+      },
+      "GroupBy": {
+        "$ref": "./components/parameters/groupby.json"
+      },
+      "IncludeDetails": {
+        "$ref": "./components/parameters/includedetails.json"
+      },
+      "ClaimStatus": {
+        "$ref": "./components/parameters/claimstatus.json"
+      },
+      "Page": {
+        "$ref": "./components/parameters/page.json"
+      },
+      "PageSize": {
+        "$ref": "./components/parameters/pagesize.json"
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "$ref": "./components/responses/badrequest.json"
+      },
+      "Unauthorized": {
+        "$ref": "./components/responses/unauthorized.json"
+      },
+      "Forbidden": {
+        "$ref": "./components/responses/forbidden.json"
+      },
+      "UnprocessableEntity": {
+        "$ref": "./components/responses/unprocessableentity.json"
+      },
+      "InternalError": {
+        "$ref": "./components/responses/internalerror.json"
+      }
+    },
+    "schemas": {
+      "Money": {
+        "$ref": "./components/schemas/money.json"
+      },
+      "ErrorResponse": {
+        "$ref": "./components/schemas/errorresponse.json"
+      },
+      "Offer": {
+        "$ref": "./components/schemas/offer.json"
+      },
+      "OfferListResponse": {
+        "$ref": "./components/schemas/offerlistresponse.json"
+      },
+      "PromoModalResponse": {
+        "$ref": "./components/schemas/promomodalresponse.json"
+      },
+      "IncentiveTrackerEntry": {
+        "$ref": "./components/schemas/incentivetrackerentry.json"
+      },
+      "IncentiveTrackerListResponse": {
+        "$ref": "./components/schemas/incentivetrackerlistresponse.json"
+      },
+      "ProgramBenefitsResponse": {
+        "$ref": "./components/schemas/programbenefitsresponse.json"
+      },
+      "RetailTireSalesIncentiveResponse": {
+        "$ref": "./components/schemas/retailtiresalesincentiveresponse.json"
+      },
+      "SnapshotTableResponse": {
+        "$ref": "./components/schemas/snapshottableresponse.json"
+      },
+      "RetailRoMetricsResponse": {
+        "$ref": "./components/schemas/retailrometricsresponse.json"
+      },
+      "ClaimsTrackerListResponse": {
+        "$ref": "./components/schemas/claimstrackerlistresponse.json"
+      },
+      "VolumeDiscountResponse": {
+        "$ref": "./components/schemas/volumediscountresponse.json"
+      }
+    }
+  }
+}

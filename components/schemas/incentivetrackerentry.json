@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "trackerId",
+    "dealerId",
+    "programCode",
+    "eventType",
+    "referenceId",
+    "occurredAt"
+  ],
+  "properties": {
+    "trackerId": {
+      "type": "string"
+    },
+    "dealerId": {
+      "type": "string"
+    },
+    "programCode": {
+      "type": "string"
+    },
+    "eventType": {
+      "type": "string",
+      "example": "claim_submitted"
+    },
+    "referenceId": {
+      "type": "string"
+    },
+    "amount": {
+      "$ref": "#/components/schemas/Money"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "readOnly": true
+}

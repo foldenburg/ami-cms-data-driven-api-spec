@@ -1,0 +1,27 @@
+{
+  "description": "Bad Request (invalid query/body)",
+  "content": {
+    "application/json": {
+      "schema": {
+        "$ref": "#/components/schemas/ErrorResponse"
+      },
+      "examples": {
+        "example": {
+          "value": {
+            "error": {
+              "code": "invalid_request",
+              "message": "startDate must be before endDate",
+              "details": [
+                {
+                  "field": "startDate",
+                  "reason": "invalid_range"
+                }
+              ],
+              "traceId": "trc_01HZZZBADREQ"
+            }
+          }
+        }
+      }
+    }
+  }
+}

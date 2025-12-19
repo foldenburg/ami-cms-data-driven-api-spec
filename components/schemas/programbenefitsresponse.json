@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "required": [
+    "dealerId",
+    "programCode",
+    "period",
+    "benefits"
+  ],
+  "properties": {
+    "dealerId": {
+      "type": "string"
+    },
+    "programCode": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "startDate",
+        "endDate"
+      ],
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "benefitCode",
+          "usedCount",
+          "remainingCount"
+        ],
+        "properties": {
+          "benefitCode": {
+            "type": "string",
+            "example": "FREE_ROTATION"
+          },
+          "usedCount": {
+            "type": "integer",
+            "example": 18
+          },
+          "remainingCount": {
+            "type": "integer",
+            "example": 42
+          }
+        }
+      }
+    }
+  },
+  "readOnly": true
+}

@@ -1,8 +1,0 @@
-name: locale
-in: query
-required: false
-schema:
-  type: string
-  example: en-US
-  default: en-US
-description: Locale for localized copy.

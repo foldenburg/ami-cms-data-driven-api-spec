@@ -1,7 +1,0 @@
-name: includeDetails
-in: query
-required: false
-schema:
-  type: boolean
-  default: false
-description: Include expanded details in response.

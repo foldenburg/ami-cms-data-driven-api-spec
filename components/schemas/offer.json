@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": [
+    "offerId",
+    "title",
+    "description",
+    "startDate",
+    "endDate"
+  ],
+  "properties": {
+    "offerId": {
+      "type": "string",
+      "example": "OFF-100234"
+    },
+    "title": {
+      "type": "string",
+      "example": "$80 Visa\u00ae Prepaid Card"
+    },
+    "description": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "disclaimer": {
+      "type": "string"
+    }
+  },
+  "readOnly": true
+}

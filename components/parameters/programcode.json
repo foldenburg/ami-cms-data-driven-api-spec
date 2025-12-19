@@ -1,0 +1,10 @@
+{
+  "name": "programCode",
+  "in": "query",
+  "required": false,
+  "schema": {
+    "type": "string",
+    "example": "WINTER-REBATE"
+  },
+  "description": "Incentive/program code."
+}

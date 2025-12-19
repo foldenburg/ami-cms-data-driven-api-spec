@@ -1,0 +1,79 @@
+{
+  "get": {
+    "tags": [
+      "Retail Metrics"
+    ],
+    "summary": "Get retail RO metrics",
+    "operationId": "getRetailRoMetrics",
+    "parameters": [
+      {
+        "$ref": "#/components/parameters/DealerId"
+      },
+      {
+        "$ref": "#/components/parameters/StartDate"
+      },
+      {
+        "$ref": "#/components/parameters/EndDate"
+      },
+      {
+        "$ref": "#/components/parameters/IncludeDetails"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Retail RO metrics for the period",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RetailRoMetricsResponse"
+            },
+            "examples": {
+              "example": {
+                "value": {
+                  "dealerId": "DLR-004219",
+                  "period": {
+                    "startDate": "2025-12-01",
+                    "endDate": "2025-12-15"
+                  },
+                  "metrics": {
+                    "roCount": 512,
+                    "avgTicket": {
+                      "amount": 291.44,
+                      "currency": "USD"
+                    },
+                    "tireAttachRate": 0.34,
+                    "alignmentAttachRate": 0.18
+                  },
+                  "details": {
+                    "topServices": [
+                      {
+                        "code": "ALIGNMENT",
+                        "count": 92
+                      },
+                      {
+                        "code": "ROTATION",
+                        "count": 141
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "$ref": "#/components/responses/BadRequest"
+      },
+      "401": {
+        "$ref": "#/components/responses/Unauthorized"
+      },
+      "403": {
+        "$ref": "#/components/responses/Forbidden"
+      },
+      "500": {
+        "$ref": "#/components/responses/InternalError"
+      }
+    }
+  }
+}

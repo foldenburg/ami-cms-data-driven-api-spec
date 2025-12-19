@@ -1,0 +1,10 @@
+{
+  "name": "dealerId",
+  "in": "query",
+  "required": true,
+  "schema": {
+    "type": "string",
+    "example": "DLR-004219"
+  },
+  "description": "Dealer identifier."
+}
