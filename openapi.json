@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Incentives & Analytics API",
-    "description": "Client-facing API for offers, incentives, trackers, and retail performance metrics.\n\n**Authentication**\n- All endpoints require a Bearer token.\n",
+    "title": "AMI - CMS Data Driven Components API",
+    "description": "BFF layer-facing API for fetching data for the data driven CMS components.\n\n**Authentication**\n- All endpoints require a Bearer token.\n",
     "version": "1.0.0"
   },
   "servers": [
