@@ -1,0 +1,12 @@
+description: Internal Server Error
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/ErrorResponse'
+    examples:
+      example:
+        value:
+          error:
+            code: internal_error
+            message: Unexpected error
+            traceId: trc_01HZZZ500

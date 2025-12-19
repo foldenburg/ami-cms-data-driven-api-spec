@@ -1,0 +1,50 @@
+type: object
+required:
+- dealerId
+- period
+- brand
+- thresholds
+- progress
+properties:
+  dealerId:
+    type: string
+  period:
+    type: object
+    required:
+    - startDate
+    - endDate
+    properties:
+      startDate:
+        type: string
+        format: date
+      endDate:
+        type: string
+        format: date
+  brand:
+    type: string
+  thresholds:
+    type: array
+    items:
+      type: object
+      required:
+      - units
+      - reward
+      properties:
+        units:
+          type: integer
+        reward:
+          $ref: '#/components/schemas/Money'
+  progress:
+    type: object
+    required:
+    - unitsSold
+    - nextThresholdUnits
+    - estimatedReward
+    properties:
+      unitsSold:
+        type: integer
+      nextThresholdUnits:
+        type: integer
+      estimatedReward:
+        $ref: '#/components/schemas/Money'
+readOnly: true

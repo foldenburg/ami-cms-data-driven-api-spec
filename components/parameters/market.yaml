@@ -1,0 +1,10 @@
+name: market
+in: query
+required: false
+schema:
+  type: string
+  enum:
+  - US
+  - CA
+  default: US
+description: Market/country context for content and eligibility.

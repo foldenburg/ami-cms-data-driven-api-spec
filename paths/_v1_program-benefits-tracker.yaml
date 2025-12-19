@@ -1,0 +1,40 @@
+get:
+  tags:
+  - Tracking
+  summary: Get program benefit tracking summary
+  operationId: getProgramBenefitsTracker
+  parameters:
+  - $ref: '#/components/parameters/DealerId'
+  - $ref: '#/components/parameters/ProgramCode'
+  - $ref: '#/components/parameters/StartDate'
+  - $ref: '#/components/parameters/EndDate'
+  responses:
+    '200':
+      description: Benefit tracking summary
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProgramBenefitsResponse'
+          examples:
+            example:
+              value:
+                dealerId: DLR-004219
+                programCode: LOYALTY-PRO
+                period:
+                  startDate: '2025-12-01'
+                  endDate: '2025-12-31'
+                benefits:
+                - benefitCode: FREE_ROTATION
+                  usedCount: 18
+                  remainingCount: 42
+                - benefitCode: ROAD_HAZARD
+                  usedCount: 3
+                  remainingCount: 7
+    '400':
+      $ref: '#/components/responses/BadRequest'
+    '401':
+      $ref: '#/components/responses/Unauthorized'
+    '403':
+      $ref: '#/components/responses/Forbidden'
+    '500':
+      $ref: '#/components/responses/InternalError'

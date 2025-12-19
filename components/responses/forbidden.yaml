@@ -1,0 +1,12 @@
+description: Forbidden (insufficient permissions)
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/ErrorResponse'
+    examples:
+      example:
+        value:
+          error:
+            code: forbidden
+            message: Token does not have access to dealerId DLR-004219
+            traceId: trc_01HZZZFORBID

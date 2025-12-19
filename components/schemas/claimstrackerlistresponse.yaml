@@ -1,0 +1,47 @@
+type: object
+required:
+- items
+- totalCount
+- page
+- pageSize
+properties:
+  items:
+    type: array
+    items:
+      type: object
+      required:
+      - claimId
+      - dealerId
+      - orderId
+      - programCode
+      - status
+      - submittedAt
+      properties:
+        claimId:
+          type: string
+        dealerId:
+          type: string
+        orderId:
+          type: string
+        programCode:
+          type: string
+        status:
+          type: string
+          enum:
+          - submitted
+          - approved
+          - denied
+          - paid
+        submittedAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+  totalCount:
+    type: integer
+  page:
+    type: integer
+  pageSize:
+    type: integer
+readOnly: true

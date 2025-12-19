@@ -1,0 +1,8 @@
+name: endDate
+in: query
+required: false
+schema:
+  type: string
+  format: date
+  example: '2025-12-31'
+description: Inclusive end date for range queries.

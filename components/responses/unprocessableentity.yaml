@@ -1,0 +1,17 @@
+description: Unprocessable Entity (business rule failed)
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/ErrorResponse'
+    examples:
+      example:
+        value:
+          error:
+            code: business_rule_failed
+            message: Basket does not meet minimum requirements for offer OFF-100234
+            details:
+            - field: basket.items
+              reason: min_quantity_not_met
+              meta:
+                requiredQty: 4
+            traceId: trc_01HZZZ422

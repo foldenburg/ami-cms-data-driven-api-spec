@@ -1,0 +1,48 @@
+get:
+  tags:
+  - Incentives
+  summary: Get retail tire sales incentive status
+  operationId: getRetailTireSalesIncentive
+  parameters:
+  - $ref: '#/components/parameters/DealerId'
+  - $ref: '#/components/parameters/StartDate'
+  - $ref: '#/components/parameters/EndDate'
+  - $ref: '#/components/parameters/Brand'
+  responses:
+    '200':
+      description: Incentive status for the period
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetailTireSalesIncentiveResponse'
+          examples:
+            example:
+              value:
+                dealerId: DLR-004219
+                period:
+                  startDate: '2025-12-01'
+                  endDate: '2025-12-31'
+                brand: ACME_TIRE
+                thresholds:
+                - units: 100
+                  reward:
+                    amount: 150
+                    currency: USD
+                - units: 200
+                  reward:
+                    amount: 400
+                    currency: USD
+                progress:
+                  unitsSold: 132
+                  nextThresholdUnits: 200
+                  estimatedReward:
+                    amount: 150
+                    currency: USD
+    '400':
+      $ref: '#/components/responses/BadRequest'
+    '401':
+      $ref: '#/components/responses/Unauthorized'
+    '403':
+      $ref: '#/components/responses/Forbidden'
+    '500':
+      $ref: '#/components/responses/InternalError'

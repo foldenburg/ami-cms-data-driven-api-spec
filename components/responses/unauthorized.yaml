@@ -1,0 +1,12 @@
+description: Unauthorized (missing/invalid token)
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/ErrorResponse'
+    examples:
+      example:
+        value:
+          error:
+            code: unauthorized
+            message: Missing or invalid Authorization header
+            traceId: trc_01HZZZUNAUTH

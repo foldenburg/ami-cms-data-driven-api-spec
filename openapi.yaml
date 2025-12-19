@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: AMI CMS Data Driven Components API
+  description: 'BFF layer-facing API for CMS enhanced offers, incentives, trackers, and retail performance metrics components.
+
+
+    **Authentication**
+
+    - All endpoints require a Bearer token.
+
+    '
+  version: 1.0.0
+servers:
+- url: https://api.example.com
+security:
+- bearerAuth: []
+tags:
+- name: Offers
+- name: Incentives
+- name: Retail Metrics
+- name: Tracking
+paths:
+  /v1/current-offers:
+    $ref: ./paths/_v1_current-offers.yaml
+  /v1/tire-finder-promo-modal:
+    $ref: ./paths/_v1_tire-finder-promo-modal.yaml
+  /v1/incentive-tracker:
+    $ref: ./paths/_v1_incentive-tracker.yaml
+  /v1/program-benefits-tracker:
+    $ref: ./paths/_v1_program-benefits-tracker.yaml
+  /v1/retail-tire-sales-incentive:
+    $ref: ./paths/_v1_retail-tire-sales-incentive.yaml
+  /v1/snapshot-table:
+    $ref: ./paths/_v1_snapshot-table.yaml
+  /v1/retail-ro-metrics:
+    $ref: ./paths/_v1_retail-ro-metrics.yaml
+  /v1/order-claims-tracker:
+    $ref: ./paths/_v1_order-claims-tracker.yaml
+  /v1/volume-discount-tracker:
+    $ref: ./paths/_v1_volume-discount-tracker.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Use `Authorization: Bearer <token>`.'
+  parameters:
+    DealerId:
+      $ref: ./components/parameters/dealerid.yaml
+    Market:
+      $ref: ./components/parameters/market.yaml
+    Locale:
+      $ref: ./components/parameters/locale.yaml
+    Zip:
+      $ref: ./components/parameters/zip.yaml
+    EffectiveDate:
+      $ref: ./components/parameters/effectivedate.yaml
+    StartDate:
+      $ref: ./components/parameters/startdate.yaml
+    EndDate:
+      $ref: ./components/parameters/enddate.yaml
+    ProgramCode:
+      $ref: ./components/parameters/programcode.yaml
+    Brand:
+      $ref: ./components/parameters/brand.yaml
+    Quarter:
+      $ref: ./components/parameters/quarter.yaml
+    Placement:
+      $ref: ./components/parameters/placement.yaml
+    GroupBy:
+      $ref: ./components/parameters/groupby.yaml
+    IncludeDetails:
+      $ref: ./components/parameters/includedetails.yaml
+    ClaimStatus:
+      $ref: ./components/parameters/claimstatus.yaml
+    Page:
+      $ref: ./components/parameters/page.yaml
+    PageSize:
+      $ref: ./components/parameters/pagesize.yaml
+  responses:
+    BadRequest:
+      $ref: ./components/responses/badrequest.yaml
+    Unauthorized:
+      $ref: ./components/responses/unauthorized.yaml
+    Forbidden:
+      $ref: ./components/responses/forbidden.yaml
+    UnprocessableEntity:
+      $ref: ./components/responses/unprocessableentity.yaml
+    InternalError:
+      $ref: ./components/responses/internalerror.yaml
+  schemas:
+    Money:
+      $ref: ./components/schemas/money.yaml
+    ErrorResponse:
+      $ref: ./components/schemas/errorresponse.yaml
+    Offer:
+      $ref: ./components/schemas/offer.yaml
+    OfferListResponse:
+      $ref: ./components/schemas/offerlistresponse.yaml
+    PromoModalResponse:
+      $ref: ./components/schemas/promomodalresponse.yaml
+    IncentiveTrackerEntry:
+      $ref: ./components/schemas/incentivetrackerentry.yaml
+    IncentiveTrackerListResponse:
+      $ref: ./components/schemas/incentivetrackerlistresponse.yaml
+    ProgramBenefitsResponse:
+      $ref: ./components/schemas/programbenefitsresponse.yaml
+    RetailTireSalesIncentiveResponse:
+      $ref: ./components/schemas/retailtiresalesincentiveresponse.yaml
+    SnapshotTableResponse:
+      $ref: ./components/schemas/snapshottableresponse.yaml
+    RetailRoMetricsResponse:
+      $ref: ./components/schemas/retailrometricsresponse.yaml
+    ClaimsTrackerListResponse:
+      $ref: ./components/schemas/claimstrackerlistresponse.yaml
+    VolumeDiscountResponse:
+      $ref: ./components/schemas/volumediscountresponse.yaml
